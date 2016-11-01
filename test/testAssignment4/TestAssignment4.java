@@ -47,37 +47,36 @@ public class TestAssignment4 {
     // @Test
     // public void hello() {}
     @Test
-     void testHashSetPairsUnique(){
+    public  void testHashSetPairsUnique(){
         String test_left1 = "rachel";
         String test_right1 = "tim";
         String test_left2 = "sam";
         String test_right2 = "dee";
         
         HashSet<String> pairs = new HashSet<String>();
-        try(Close out = outExpect( "[(sam, dee),(rachel, tim)]")){
             pairs.add("(" + test_left1 + ", " + test_right1 + ")");
             pairs.add("(" + test_left2 + ", " + test_right2 + ")");
-            System.out.println(pairs);
-        }
+        assertTrue(pairs.contains("(rachel, tim)"));
+        assertTrue(pairs.contains("(sam, dee)"));
     }
     @Test
-    void testHashSetPairsDuplicate(){
+    public void testHashSetPairsDuplicate(){
         String test_left1 = "lily";
         String test_right1 = "alex";
         String test_left2 = "drake";
         String test_right2 = "frank";
         
         HashSet<String> pairs = new HashSet<String>();
-        try(Close out = outExpect( "[(lily, alex),(drake, frank)]")){
+        
             pairs.add("(" + test_left1 + ", " + test_right1 + ")");
             pairs.add("(" + test_left2 + ", " + test_right2 + ")");
             pairs.add("(" + test_left2 + ", " + test_right2 + ")");
-            System.out.println(pairs);
-        }
+        
+        assertTrue(pairs.contains("(lily, alex)"));
+        assertTrue(pairs.contains("(drake, frank)"));
     }
-    
     @Test
-    void testHashSetRemovePair(){
+    public void testHashSetRemovePair(){
         String test_left1 = "cleo";
         String test_right1 = "peter";
         String test_left2 = "pat";
@@ -96,15 +95,15 @@ public class TestAssignment4 {
        
         assertTrue(pairs.contains("(cleo, peter)"));
         assertTrue(pairs.contains("(pat, fire)"));
-        assertTrue(pairs.contains("sherlock, john"));
+        assertTrue(pairs.contains("(sherlock, john)"));
         pairs.remove("(pat, fire)");
         assertTrue(pairs.contains("(cleo, peter)"));
         assertFalse(pairs.contains("(pat, fire)"));
-        assertTrue(pairs.contains("sherlock, john"));
+        assertTrue(pairs.contains("(sherlock, john)"));
     }
     
     @Test    
-    void testHashSetContains(){
+    public void testHashSetContains(){
         String pair1 = "(cleo, peter)";
         String pair2 = "(dee, eve)";
         String pair3 = "(jenkins, phil)";
@@ -126,7 +125,7 @@ public class TestAssignment4 {
     }
     
     @Test
-    void testTreeSetAddPairs(){
+    public void testTreeSetAddPairs(){
         TreeSet<String> pairs = new TreeSet<String>();
         String pair1 = "(cleo, peter)";
         String pair2 = "(dee, eve)";
@@ -154,7 +153,7 @@ public class TestAssignment4 {
         
     }
     @Test
-     void testTreeSetRemovePairs(){
+    public void testTreeSetRemovePairs(){
         TreeSet<String> pairs = new TreeSet<String>();
         String pair1 = "(cleo, peter)";
         String pair2 = "(dee, eve)";
@@ -193,7 +192,7 @@ public class TestAssignment4 {
     }
     
     @Test
-     void testTreeSetContains(){
+    public void testTreeSetContains(){
         TreeSet<String> pairs = new TreeSet<String>();
         String pair1 = "(cleo, peter)";
         String pair2 = "(dee, eve)";
