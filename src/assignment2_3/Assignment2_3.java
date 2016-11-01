@@ -122,6 +122,32 @@ public class Assignment2_3 {
         }
     }
     
+     void testTreeSetRemovePairs(){
+        TreeSet<String> pairs = new TreeSet<String>();
+        String pair1 = "(cleo, peter)";
+        String pair2 = "(dee, eve)";
+        String pair3 = "(jenkins, phil)";
+        String pair4 = "(lily, katie)";
+        String pair5 = "(ashley, drake)";
+        
+        pairs.add(pair1);
+        pairs.add(pair2);
+        pairs.add(pair3);
+        pairs.add(pair4);
+       
+        pairs.add(pair5);
+        
+        try(Close out = outExpect("["+pair5+"," +pair1+","+pair2+","+pair3+","+pair4+"]")) {       
+            println(pairs);
+        }
+         
+        pairs.remove(pair1);
+        pairs.remove(pair3);
+        try(Close out = outExpect("["+pair5+","+pair2+","+pair4+"]")){
+            println(pairs);
+        }
+    }
+    
     void run() {
         Scanner s = new Scanner(System.in);
         int t = s.nextInt();
