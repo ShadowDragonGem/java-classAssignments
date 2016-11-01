@@ -113,13 +113,13 @@ public class TestAssignment4 {
         pairs.add(pair3);
         pairs.add(pair4);
         
-        assert pairs.contains(pair1) == true;
-        assert pairs.contains("(jeremey, david") == false;
-        assert pairs.contains(pair4) == true;
-        assert pairs.contains(pair3) == true;
+        assertTrue(pairs.contains(pair1));
+        assertFalse(pairs.contains("(jeremey, david"));
+        assertTrue(pairs.contains(pair4) );
+        assertTrue(pairs.contains(pair3));
         
         pairs.remove(pair3);
-        assert pairs.contains(pair3) == false;
+        assertFalse(pairs.contains(pair3));
 
     }
     
