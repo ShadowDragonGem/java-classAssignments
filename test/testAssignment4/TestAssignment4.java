@@ -84,21 +84,23 @@ public class TestAssignment4 {
         String test_right2 = "fire";
         
         HashSet<String> pairs = new HashSet<String>();
-        try(Close out = outExpect( "[(cleo, peter),(pat, fire)]")){
+       
             pairs.add("(" + test_left1 + ", " + test_right1 + ")");
             pairs.add("(" + test_left2 + ", " + test_right2 + ")");
             pairs.add("(" + test_left2 + ", " + test_right2 + ")");
-            System.out.println(pairs);
-        }
+            assertTrue(pairs.contains("(cleo, peter)"));
+            assertTrue(pairs.contains("(pat, fire)"));
+        
         String newPair = "(sherlock, john)";
         pairs.add(newPair);
-        try(Close out = outExpect("[(cleo, peter),(sherlock, john),(pat, fire)]")){
-                System.out.println(pairs);
-        }
+       
+        assertTrue(pairs.contains("(cleo, peter)"));
+        assertTrue(pairs.contains("(pat, fire)"));
+        assertTrue(pairs.contains("sherlock, john"));
         pairs.remove("(pat, fire)");
-        try (Close out = outExpect("[(cleo, peter),(sherlock, john)]")){
-            System.out.println(pairs);
-        }
+        assertTrue(pairs.contains("(cleo, peter)"));
+        assertFalse(pairs.contains("(pat, fire)"));
+        assertTrue(pairs.contains("sherlock, john"));
     }
     
     @Test    
