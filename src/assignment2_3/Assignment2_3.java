@@ -24,7 +24,7 @@ public class Assignment2_3 {
     plus some more things to make it more interesting
     */
     
-    void testPairsUnique(){
+    void testHashSetPairsUnique(){
         String test_left1 = "rachel";
         String test_right1 = "tim";
         String test_left2 = "sam";
@@ -38,7 +38,7 @@ public class Assignment2_3 {
         }
     }
     
-    void testPairsDuplicate(){
+    void testHashSetPairsDuplicate(){
         String test_left1 = "lily";
         String test_right1 = "alex";
         String test_left2 = "drake";
@@ -53,7 +53,7 @@ public class Assignment2_3 {
         }
     }
     
-    void testRemovePair(){
+    void testHashSetRemovePair(){
         String test_left1 = "cleo";
         String test_right1 = "peter";
         String test_left2 = "pat";
@@ -77,7 +77,7 @@ public class Assignment2_3 {
         }
     }
     
-    void testContains(){
+    void testHashSetContains(){
         String pair1 = "(cleo, peter)";
         String pair2 = "(dee, eve)";
         String pair3 = "(jenkins, phil)";
@@ -96,6 +96,30 @@ public class Assignment2_3 {
         pairs.remove(pair3);
         assert pairs.contains(pair3) == false;
 
+    }
+    
+    
+    void testTreeSetAddPairs(){
+        TreeSet<String> pairs = new TreeSet<String>();
+        String pair1 = "(cleo, peter)";
+        String pair2 = "(dee, eve)";
+        String pair3 = "(jenkins, phil)";
+        String pair4 = "(lily, katie)";
+        String pairNew = "(ashley, drake)";
+        
+        pairs.add(pair1);
+        pairs.add(pair2);
+        pairs.add(pair3);
+        pairs.add(pair4);
+        
+        try(Close out = outExpect("["+pair1+","+pair2+","+pair3+","+pair4+"]")) {       
+            println(pairs);
+        }
+        pairs.add(pairNew);
+        
+        try(Close out = outExpect("["+pairNew+"," +pair1+","+pair2+","+pair3+","+pair4+"]")) {       
+            println(pairs);
+        }
     }
     
     void run() {
