@@ -137,14 +137,19 @@ public class TestAssignment4 {
         pairs.add(pair3);
         pairs.add(pair4);
         
-        try(Close out = outExpect("["+pair1+","+pair2+","+pair3+","+pair4+"]")) {       
-            System.out.println(pairs);
-        }
-        pairs.add(pairNew);
+        assertTrue(pairs.contains(pair1));
+        assertTrue(pairs.contains(pair2));
+        assertTrue(pairs.contains(pair3));
+        assertTrue(pairs.contains(pair4));
+        assertFalse(pairs.contains(pairNew));
         
-        try(Close out = outExpect("["+pairNew+"," +pair1+","+pair2+","+pair3+","+pair4+"]")) {       
-            System.out.println(pairs);
-        }
+        pairs.add(pairNew);
+        assertTrue(pairs.contains(pair1));
+        assertTrue(pairs.contains(pair2));
+        assertTrue(pairs.contains(pair3));
+        assertTrue(pairs.contains(pair4));
+        assertTrue(pairs.contains(pairNew));
+        
     }
     @Test
      void testTreeSetRemovePairs(){
