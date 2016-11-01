@@ -160,17 +160,29 @@ public class TestAssignment4 {
         pairs.add(pair3);
         pairs.add(pair4);
        
-        pairs.add(pair5);
+        assertTrue(pairs.contains(pair1));
+        assertTrue(pairs.contains(pair2));
+        assertTrue(pairs.contains(pair3));
+        assertTrue(pairs.contains(pair4));
+        assertFalse(pairs.contains(pair5));
         
-        try(Close out = outExpect("["+pair5+"," +pair1+","+pair2+","+pair3+","+pair4+"]")) {       
-            System.out.println(pairs);
-        }
+        pairs.add(pair5);
+        assertTrue(pairs.contains(pair1));
+        assertTrue(pairs.contains(pair2));
+        assertTrue(pairs.contains(pair3));
+        assertTrue(pairs.contains(pair4));
+        assertTrue(pairs.contains(pair5));
        
         pairs.remove(pair1);
         pairs.remove(pair3);
-        try(Close out = outExpect("["+pair5+","+pair2+","+pair4+"]")){
-            System.out.println(pairs);
-        }
+        
+        assertFalse(pairs.contains(pair1));
+        assertTrue(pairs.contains(pair2));
+        assertFalse(pairs.contains(pair3));
+        assertTrue(pairs.contains(pair4));
+        assertTrue(pairs.contains(pair5));
+       
+       
     }
     
     @Test
