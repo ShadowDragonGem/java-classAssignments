@@ -77,6 +77,27 @@ public class Assignment2_3 {
         }
     }
     
+    void testContains(){
+        String pair1 = "(cleo, peter)";
+        String pair2 = "(dee, eve)";
+        String pair3 = "(jenkins, phil)";
+        String pair4 = "(lily, katie)";
+        HashSet<String> pairs = new HashSet<String>();
+        pairs.add(pair1);
+        pairs.add(pair2);
+        pairs.add(pair3);
+        pairs.add(pair4);
+        
+        assert pairs.contains(pair1) == true;
+        assert pairs.contains("(jeremey, david") == false;
+        assert pairs.contains(pair4) == true;
+        assert pairs.contains(pair3) == true;
+        
+        pairs.remove(pair3);
+        assert pairs.contains(pair3) == false;
+
+    }
+    
     void run() {
         Scanner s = new Scanner(System.in);
         int t = s.nextInt();
