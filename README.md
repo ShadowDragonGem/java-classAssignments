@@ -5,7 +5,7 @@ The repository with the rest of my assignments because my original repo won't le
 
 [updated assignment 3](https://github.com/ShadowDragonGem/java-classAssignments/tree/assignment2-3_revisions/src/assignment2_3)
 
-[original(kiss) tests that were transformed in assignment 4](https://github.com/ShadowDragonGem/java-classAssignments/tree/assignment4/src/assignment4)
+[original(kiss) tests that were used in assignment 4](https://github.com/ShadowDragonGem/java-classAssignments/tree/assignment4/src/assignment4)
 
-[Updated jUnit tests for assignment 4] (https://github.com/ShadowDragonGem/java-classAssignments/tree/assignment4/test/testAssignment4) 
+[jUnit tests for assignment 4] (https://github.com/ShadowDragonGem/java-classAssignments/tree/assignment4/test/testAssignment4) 
 
