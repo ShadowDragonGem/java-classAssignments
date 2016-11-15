@@ -9,10 +9,20 @@ package Animals;
  *
  * @author deser
  */
-public class animal {
+public class animal implements AnimalInterface {
     String name;
     
     animal(String _name){
+        name = _name;
+    }
+
+    @Override
+    public String getName() {
+    return name;
+    }
+
+    @Override
+    public void setName(String _name) {
         name = _name;
     }
 }
