@@ -4,16 +4,12 @@
  * and open the template in the editor.
  */
 package Animals;
-import static kiss.API.*;
+
 /**
  *
  * @author deser
  */
-public class Ferret extends DefaultAnimal {
-    Ferret(String name){
-        super(name);
-    }
-    void scurry(){
-        println("scurry!!!");
-    }
+public interface Animal {
+    String getName();
+    void setName(String name);
 }

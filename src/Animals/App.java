@@ -12,53 +12,58 @@ import static kiss.API.*;
  */
 public class App {
     void testAnimals(){
-        LinkedList<animal> animals = new LinkedList<animal>();
+        LinkedList<DefaultAnimal> animals = new LinkedList<DefaultAnimal>();
         animals.add(new Ferret("Slim"));
         animals.add(new Ferret("Tim"));
         animals.add(new Raven("Poe"));
-        animals.add(new Bird("Dee"));
+        animals.add(new DefaultBird("Dee"));
         
-        for(animal Animal: animals){
-            println("Name: " + Animal.name);
+        for(DefaultAnimal Animal: animals){
+            println("Name: " + Animal.getName());
         }
         
-        for (animal Animal: animals){
-            if (Animal instanceof Bird){
-                Bird bird = (Bird) Animal;
+        for (DefaultAnimal Animal: animals){
+            if (Animal instanceof DefaultBird){
+                DefaultBird bird = (DefaultBird) Animal;
                 bird.fly();
             }
         }
     }
     
+    void testPlatypus(){
+        Platypus pete = new Platypus("Pete");
+        assert pete.isFurry() == true;
+    }
+    
     void testCollectionOfAnimals(){
-        LinkedList<animal> animals = new LinkedList<animal>();
+        LinkedList<DefaultAnimal> animals = new LinkedList<DefaultAnimal>();
         animals.add(new Ferret("Slim"));
         animals.add(new Ferret("Tim"));
         animals.add(new Raven("Poe"));
-        animals.add(new Bird("Dee"));
+        animals.add(new DefaultBird("Dee"));
         
         try (Close out = outExpect("Name: Slim", EOL,
                                     "Name: Tim", EOL, 
                                     "Name: Poe" , EOL,
                                     "Name: Dee")){
-            for(animal Animal: animals){
-                println("Name: " + Animal.name);
+            for(DefaultAnimal Animal: animals){
+                println("Name: " + Animal.getName());
             }
         }
         
     }
     
     void testOnlyBirdsFly(){
-         LinkedList<animal> animals = new LinkedList<animal>();
+         LinkedList<DefaultAnimal> animals = new LinkedList<DefaultAnimal>();
         animals.add(new Ferret("Slim"));
         animals.add(new Ferret("Tim"));
         animals.add(new Raven("Poe"));
-        animals.add(new Bird("Dee"));
+        animals.add(new DefaultBird("Dee"));
         
         try(Close out = outExpect("flying...", EOL, "quietly...", EOL, "flying...")){
-            for (animal Animal: animals){
-                if (Animal instanceof Bird){
-                    Bird bird = (Bird) Animal;
+            for (DefaultAnimal Animal: animals){
+                if (Animal instanceof DefaultBird){
+                    DefaultBird bird = (DefaultBird) Animal;
                     bird.fly();
                 }
             }
@@ -66,11 +71,11 @@ public class App {
     }
     
     void testCastException(){
-        LinkedList<animal> animals = new LinkedList<animal>();
+        LinkedList<DefaultAnimal> animals = new LinkedList<DefaultAnimal>();
         animals.add(new Ferret("Slim"));
         boolean passed = false;
         try{
-        Bird bird = (Bird) animals.getFirst();
+        DefaultBird bird = (DefaultBird) animals.getFirst();
         } catch (ClassCastException ex){
             passed = true;
         }

@@ -4,23 +4,24 @@
  * and open the template in the editor.
  */
 package Animals;
-import static kiss.API.*;
+
 /**
  *
  * @author deser
  */
-public class Raven extends DefaultBird{
-    Raven(String _name){
+public class Platypus extends DefaultMammal implements Bird {
+    
+    private  DefaultBird birdness;
+    public Platypus(String _name) {
         super(_name);
+        birdness = new DefaultBird(_name);
     }
-    void quoth(){
-        println("nevermore...");
+
+    @Override
+    public void fly() {
+        birdness.fly();
     }
     
-    @Override
-    public void fly(){
-        super.fly();
-        println("quietly...");
-    }
+  
     
 }

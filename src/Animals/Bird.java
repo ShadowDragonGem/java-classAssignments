@@ -4,16 +4,12 @@
  * and open the template in the editor.
  */
 package Animals;
-import static kiss.API.*;
+
 /**
  *
  * @author deser
  */
-public class Bird extends animal{
-    Bird(String name){
-        super(name);
-    }
-    void fly(){
-        println("flying...");
-    }
+public interface Bird {
+    public void fly();
+  
 }
