@@ -22,6 +22,11 @@ public class Platypus extends DefaultMammal implements Bird {
         birdness.fly();
     }
     
+    @Override
+    public void setName(String name){
+        birdness.setName(name);
+        super.setName(name);
+    }
   
     
 }
