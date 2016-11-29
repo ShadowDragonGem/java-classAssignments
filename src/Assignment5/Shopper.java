@@ -21,7 +21,7 @@ public class Shopper {
     class Action extends Thread{
         public void run(){
             while(!finished){
-                pause(random(0,3000)*.001);
+                pause(random(0,4000)*.001);
                 println(name, " bought ", bought.getList());
             }
             

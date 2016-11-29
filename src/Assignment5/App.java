@@ -14,7 +14,10 @@ public class App {
     void run(){
         Items inventory = new Items();
         Baker jake = new Baker("Jake", inventory);
+        
+        Shopper jane = new Shopper("Jane", inventory);
         pause (10);
         jake.complete();
+        jane.finish();
     }
 }
