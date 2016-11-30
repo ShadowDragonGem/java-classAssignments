@@ -21,7 +21,7 @@ public class Baker {
         public void run(){
             int count = 0;
             while(!done){
-                pause(random(0, 1000)*.001);
+                pause(random(0, 500)*.001);
                 ++count;
                 baked.addItem(name + " new item " + count);
             }

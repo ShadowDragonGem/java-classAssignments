@@ -25,8 +25,18 @@ public class App {
         
         Shopper hank = new Shopper("Hank", inventory);
         
-        pause(5);
+        Shopper helen = new Shopper("Helen", inventory);
+        
+        
+        pause(2);
         hank.finish();
+        Shopper dan = new Shopper("Dan", inventory);
+        
+        pause(5);
+        
+        helen.finish();
+        dan.finish();
+        
         jake.complete();
         sue.complete();
         
