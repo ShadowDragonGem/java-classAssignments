@@ -26,6 +26,7 @@ public class Game extends JFrame {
         setLocationRelativeTo(null);
         setVisible(true);
         setResizable(false);
+        pack();
     }
     
     public void run(){

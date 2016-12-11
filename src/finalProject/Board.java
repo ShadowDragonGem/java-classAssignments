@@ -31,12 +31,8 @@ import javax.swing.Timer;
 public class Board extends JPanel{
     private Dimension d;
     private final Font smallfont = new Font("Helvetica", Font.BOLD, 14);
-
-    private Color background;
-    private boolean ingame = false;
-    private boolean dying = false;
     
-    
+    Player player;
     
     public Board(){
        
