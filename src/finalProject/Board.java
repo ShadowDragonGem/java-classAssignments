@@ -5,15 +5,12 @@
  */
 package finalProject;
 
-import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Event;
 import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Image;
+
 import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
@@ -24,7 +21,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
@@ -47,7 +43,7 @@ public class Board extends JPanel implements ActionListener{
     int timeSinceLastEnemy = 0;
     
     public Board(){
-      initBoard();
+        initBoard();
     }
     
     public void initBoard(){
@@ -117,6 +113,7 @@ public class Board extends JPanel implements ActionListener{
         inGame();
         updatePlayer();
         updateEnemies();
+        checkCollisions();
         scoreTime++;
         if(scoreTime > 100){
           score++;
@@ -155,6 +152,18 @@ public class Board extends JPanel implements ActionListener{
                 e.move();
             else
                 enemies.remove(i);
+        }
+    }
+    
+    private void checkCollisions(){
+        Rectangle r3 = player.getBounds();
+        
+        for (Enemies enemy: enemies){
+            Rectangle r2 = enemy.getBounds();
+            
+            if(r3.intersects(r2)){
+                ingame = false;
+            }
         }
     }
     

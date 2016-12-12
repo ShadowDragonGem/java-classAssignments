@@ -7,6 +7,7 @@ package finalProject;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Rectangle;
 
 /**
  *
@@ -50,4 +51,8 @@ public class Enemies {
        g.setColor(Color.red);
        g.fillRect(x, y, size, size);
    }
+   
+    public Rectangle getBounds(){
+         return new Rectangle (x,y,size,size);
+     }
 }
