@@ -9,6 +9,7 @@ package finalProject;
  *
  * @author deser
  */
+import java.awt.Color;
 import kiss.API.*;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -16,8 +17,9 @@ import java.awt.RenderingHints;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class Game extends JFrame {
+public class Game extends JFrame implements Runnable{
 
+    
     public Game(){
         add(new Board());
         setTitle("Avoid the Enemies");
@@ -26,7 +28,7 @@ public class Game extends JFrame {
         setLocationRelativeTo(null);
         setVisible(true);
         setResizable(false);
-        pack();
+       
     }
     
     public void run(){

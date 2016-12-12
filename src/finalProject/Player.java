@@ -16,8 +16,10 @@ import java.awt.event.KeyEvent;
 public class Player {
     private int x;
     private int y;
-    private int width;
-    private int height;
+    private int amountx;
+    private int amounty;
+    private int width=20;
+    private int height=20;
     
     public Player(int x,int y){
         this.x = x;
@@ -30,20 +32,24 @@ public class Player {
     public int getHeight(){
         return height;
     }
-    public void moveX(int amount){
-        x += amount;
+    public void move(){
+        x += amountx;
+        y +=amounty;
+        
+        if (x<1)
+            x=1;
+        if(y<1)
+            y=1;
     }
     
-    public void moveY(int amount){
-        y +=amount;
-    }
+    
     public void tick(){
         
     }
     
     public void draw(Graphics g){
         g.setColor(Color.blue);
-        g.fillOval(x, y, width, height);
+        g.fillRect(x, y, width, height);
     }
     
 
@@ -52,18 +58,36 @@ public class Player {
 
         switch(keycode){
         case KeyEvent.VK_LEFT:
-            moveX(5);
+            amountx = -5;
             break;
         case KeyEvent.VK_RIGHT:
-            moveX(-5);
+            amountx=5;
             break;
         case KeyEvent.VK_UP:
-            moveY(-5);
+            amounty = -5;
             break;
         case KeyEvent.VK_DOWN:
-            moveY(5);
+            amounty =5;
             break;
         }
     }
     
+     public void keyReleased(KeyEvent e) {
+        int keycode = e.getKeyCode();
+
+        switch(keycode){
+        case KeyEvent.VK_LEFT:
+            amountx = 0;
+            break;
+        case KeyEvent.VK_RIGHT:
+            amountx=0;
+            break;
+        case KeyEvent.VK_UP:
+            amounty = 0;
+            break;
+        case KeyEvent.VK_DOWN:
+            amounty =0;
+            break;
+        }
+    }
 }
