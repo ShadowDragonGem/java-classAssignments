@@ -37,9 +37,8 @@ public class Board extends JPanel implements ActionListener{
     
     private boolean ingame;
     private Timer timer;
-    private Timer scoreTimer;
-    private Timer enemyTimer;
     
+    private int scoreTime=0;
     private int score = 0;
     
     Player player;
@@ -71,9 +70,11 @@ public class Board extends JPanel implements ActionListener{
     
     public void addEnemy(){
         int size = randNum.nextInt(40);
-        int speed = randNum.nextInt(8);
-        if(timeSinceLastEnemy >5 || enemies.isEmpty()){
+        int speed = randNum.nextInt(8)+1;
+        if(timeSinceLastEnemy >50 || enemies.isEmpty()){
             enemies.add(new Enemies(randNum.nextInt(600),size,size,speed));
+            timeSinceLastEnemy = 0;
+            
         }
     }
     
@@ -116,8 +117,11 @@ public class Board extends JPanel implements ActionListener{
         inGame();
         updatePlayer();
         updateEnemies();
-        
-        score++;
+        scoreTime++;
+        if(scoreTime > 100){
+          score++;
+          scoreTime = 0;
+        }
         timeSinceLastEnemy++;
         repaint();
     }

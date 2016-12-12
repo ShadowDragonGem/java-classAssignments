@@ -31,6 +31,7 @@ public class Game extends JFrame implements Runnable{
        
     }
     
+    
     public void run(){
         new Game();
     }
