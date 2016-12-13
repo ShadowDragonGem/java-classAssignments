@@ -24,7 +24,7 @@ public class Game extends JFrame{
     
     private void initUI(){
         add(new Board());
-        setTitle("Avoid the Enemies");
+        setTitle("Avoid the Falling Blocks");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(600,600);
         setLocationRelativeTo(null);
