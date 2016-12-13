@@ -27,6 +27,14 @@ public class Player {
         this.y = y;
     }
     
+    public int getx(){
+        return x;
+    }
+    
+    public int gety(){
+        return y;
+    }
+    
     public int getWidth(){
         return width;
     }
