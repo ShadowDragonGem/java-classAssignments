@@ -10,3 +10,7 @@ The repository with the rest of my assignments because my original repo won't le
 [jUnit tests for assignment 4] (https://github.com/ShadowDragonGem/java-classAssignments/tree/assignment4/test/testAssignment4) 
 
 [Homework assignment 5, Threading](https://github.com/ShadowDragonGem/java-classAssignments/tree/assignment5/src/Assignment5)
+
+[final project, dodge the blocks game](https://github.com/ShadowDragonGem/java-classAssignments/tree/final/src/finalProject)
+
+[tests for final project](https://github.com/ShadowDragonGem/java-classAssignments/tree/final/test/finalProject)
